@@ -1,0 +1,96 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Header Cells */
+th {
+    background-color: #f4f4f4;
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Row Hover Effect */
+tr:hover td {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Sentiment Styling */
+td.positive {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
+}
+
+td.negative {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}
+
+td.neutral {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments Sentiment Analysis</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* Table Styling */
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #4a90e2;
+            color: #fff;
+        }
+        
+        td {
+            background-color: #fafafa;
+        }
+        
+        tr:nth-child(even) td {
+            background-color: #f1f1f1;
+        }
+
+        tr:hover td {
+            background-color: #e1e1e1;
+            cursor: pointer;
+        }
+
+        /* Sentiment Styling */
+        .positive {
+            color: green;
+            font-weight: bold;
+        }
+
+        .negative {
+            color: red;
+            font-weight: bold;
+        }
+
+        .neutral {
+            color: gray;
+            font-weight: bold;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+
+            th, td {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Comments Sentiment Analysis</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Comment</th>
+                <th>Sentiment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comment in comments %}
+                <tr>
+                    <td>{{ comment._id }}</td>
+                    <td>{{ comment.value }}</td>
+                    <td class="{{ comment.sentiment | lower }}">{{ comment.sentiment }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
