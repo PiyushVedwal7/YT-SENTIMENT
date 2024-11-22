@@ -1,0 +1,4 @@
+flask
+pyspark
+requests
+google-api-python-client

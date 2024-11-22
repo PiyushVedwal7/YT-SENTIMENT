@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Comments</title>
+    <script>
+        // Function to fetch data and update the comments list
+        function fetchComments() {
+            fetch('/data')  // Fetching the data from the Flask app's /data endpoint
+                .then(response => response.json())
+                .then(data => {
+                    let commentsDiv = document.getElementById('comments');
+                    commentsDiv.innerHTML = '';  // Clear the current comments
+
+                    // Loop through the data and display each comment
+                    data.forEach(comment => {
+                        let commentElement = document.createElement('p');
+                        commentElement.innerText = `${comment.word}: ${comment.count}`;
+                        commentsDiv.appendChild(commentElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching comments:', error);
+                });
+        }
+
+        // Call the fetchComments function every 3 seconds to update the UI
+        setInterval(fetchComments, 3000);  // Update every 3 seconds
+    </script>
+</head>
+<body>
+    <h1>Real-Time Comments</h1>
+    <div id="comments">
+        <!-- The comments will be displayed here -->
+    </div>
+</body>
+</html>
